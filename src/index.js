@@ -19,10 +19,12 @@ function inWhere(selector, { className, modifier, prefix }) {
   let [trailingPseudo, rebuiltSelector] = commonTrailingPseudos(selector)
 
   if (trailingPseudo) {
-    return `:where(${selectorPrefix}${rebuiltSelector}):not(:where([class~="${prefixedNot}"],[class~="${prefixedNot}"] *))${trailingPseudo}`
+    // return `:where(${selectorPrefix}${rebuiltSelector}):not(:where([class~="${prefixedNot}"],[class~="${prefixedNot}"] *))${trailingPseudo}`
+    return `:where(${selectorPrefix}${rebuiltSelector})${trailingPseudo}`
   }
 
-  return `:where(${selectorPrefix}${selector}):not(:where([class~="${prefixedNot}"],[class~="${prefixedNot}"] *))`
+  // return `:where(${selectorPrefix}${selector}):not(:where([class~="${prefixedNot}"],[class~="${prefixedNot}"] *))`
+  return `:where(${selectorPrefix}${selector})`
 }
 
 function isObject(value) {
