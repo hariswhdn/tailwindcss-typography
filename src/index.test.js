@@ -55,9 +55,7 @@ let vars = `
 let defaults = css`
   *,
   ::before,
-  ::after {
-    ${vars}
-  }
+  ::after,
   ::backdrop {
     ${vars}
   }
